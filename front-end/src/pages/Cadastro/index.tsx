@@ -6,7 +6,7 @@ import GroupInput from '../../Components/GroupInput';
 const Cadastro = () => {
 
   return (
-    <FormComponent titulo='Cadastro' display = 'none'>
+    <FormComponent titulo='CADASTRO' display = 'none'>
       <GroupInput type='text' placeholder='nome'/>
       <GroupInput type='email' placeholder='email'/>
       <GroupInput type='password' placeholder='senha'/>
