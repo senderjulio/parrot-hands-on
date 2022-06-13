@@ -16,10 +16,16 @@ export const StyledContainer = styled(Container)`
 
 export const StyledCard = styled(Card)`
     width: 30%;
+
+    padding: 20px 5px;
+`
+
+export const StyledLinkImg = styled(Link)`
+    text-align: center;
 `
 
 export const StyledCardImg = styled(Card.Img)`
-    width: 50%;
+    width: 30%;
     margin: auto;
 `
 
@@ -41,6 +47,5 @@ export const StyledLink = styled(Link)`
     text-align: center;
     color: #555555;
     font-size: 18px;
-
-
+    margin-top: 26px;
 `

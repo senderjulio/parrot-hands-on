@@ -1,11 +1,15 @@
-import React from 'react';
 import FormComponent from '../../Components/FormComponent';
+import GroupInput from '../../Components/GroupInput';
 
 // import { Container } from './styles';
 
 const Login = () => {
+
   return (
-    <FormComponent/>
+    <FormComponent titulo='Login'>
+      <GroupInput key={1} type='email' placeholder='escreva seu email'/>
+      <GroupInput key={2} type='password' placeholder='escreva sua senha'/>
+    </FormComponent>
   )
 }
 
