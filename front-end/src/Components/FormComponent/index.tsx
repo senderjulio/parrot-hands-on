@@ -1,9 +1,7 @@
-import { Card, Form } from 'react-bootstrap';
-import GroupInput from '../GroupInput';
+import { Card } from 'react-bootstrap';
 import backgroundPage from '../assets/images/logoLogin.png';
 import * as S from './styles';
 import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 
 type Props = {
   children: ReactNode,
@@ -20,10 +18,8 @@ const FormComponent = ({children, titulo, display}: Props) => {
         </S.StyledLinkImg>        
         <Card.Body>
           <S.StyledCardTitle>{titulo}</S.StyledCardTitle>
-          <Form>
             {children}
-          </Form>
-          <S.StyledButton>entrar</S.StyledButton>
+          
         </Card.Body>
         <S.StyledLink to='/cadastro' style={{display: display}}> cadastre-se </S.StyledLink>
       </S.StyledCard>

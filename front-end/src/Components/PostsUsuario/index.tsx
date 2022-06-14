@@ -13,7 +13,7 @@ interface Props{
 const PostsUsuario = ({nome, apartamento}:Props) => {
   return (
     <Fragment>
-        <ImagemUsuario img = {imgUsuario} alt = 'nome usuario'/>
+        <ImagemUsuario img = {imgUsuario} alt = 'nome usuario' width='10%' height='50px'/>
         <S.StyledContainer>
             <S.StyledInfPost>
                 <S.StyledH1>{nome} - ape {apartamento}</S.StyledH1>
