@@ -5,6 +5,7 @@ import * as S from './styles';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
+
 type Props = {
   children: ReactNode,
   titulo: string,
