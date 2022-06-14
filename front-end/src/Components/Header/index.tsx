@@ -16,8 +16,8 @@ const Header: React.FC = () => {
     </div>
     <div>
         <S.StylesUl>
-          <S.StylesA to="/cadastro">Olá, usuário |</S.StylesA>
-          <S.MenuLink to="/sair">sair</S.MenuLink>        
+          <S.MenuLink  to="/cadastro">Olá, usuário |</S.MenuLink>
+          <S.MenuLinkS to="/sair">sair</S.MenuLinkS>        
       </S.StylesUl>
       </div>
     

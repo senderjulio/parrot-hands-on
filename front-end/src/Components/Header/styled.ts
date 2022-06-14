@@ -5,13 +5,28 @@ import styled from "styled-components";
 
 export const MenuLink = styled(Link)`
     display: block;
-    padding: 0 55px;
+    margin: 0 0px;
     text-decoration: none;
     color:#76BB4C;
     font-size: 20px;
     line-height: 24.38px;
     font-weight: bold;
     text-align: center;
+    transition: all 0.3s ease-in-out;
+    &:hover{color: #6033AA; } 
+
+`
+export const MenuLinkS = styled(Link)`
+    display: block;
+    padding: 0 5px;
+    text-decoration: none;
+    color :#6033AA;
+    font-size: 20px;
+    line-height: 24.38px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    &:hover{color:#76BB4C ; } 
 
 `
 
@@ -38,6 +53,11 @@ export const StylesImg = styled.img`
     height: 85px;
     max-width: 100%;
     max-height: 100%;
+    @media (max-width: 450px) {
+        align-items: center;
+        width: 150px;
+        height: auto;
+    }
 `
 
 export const StylesUl = styled.ul`
@@ -50,6 +70,9 @@ export const StylesUl = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
+@media (max-width: 900px) {
+        height: auto;
+    }
 `
 
 export const StylesLi = styled.li`
@@ -57,20 +80,12 @@ export const StylesLi = styled.li`
     justify-content: center;
     align-items: center;
     height: 100%;
-
+    @media (max-width: 900px) {
+        padding: 0;
+        font-size: 18px;
+        line-height: 22px;
+    }
 `
 
-export const StylesA = styled.a`
-    display: block;
-    padding: 0 2px;
-    text-decoration: none;
-    color: #76BB4C;
-    font-family: Montserrat;
-    font-size: 20px;
-    line-height: 24.38px;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    &:hover{color: #6033AA; } 
-`
+
+

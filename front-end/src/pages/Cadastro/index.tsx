@@ -13,6 +13,7 @@ const Cadastro = () => {
       <GroupInput type='password' placeholder='confirmar senha'/>
       <GroupInput type='text' placeholder='unidade/apartamento'/>
       <GroupInput type='text' placeholder='link da foto'/>
+      <GroupInput type='text' placeholder='link da foto'/>
     </FormComponent>
   )
 }
