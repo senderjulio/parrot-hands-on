@@ -1,5 +1,5 @@
 import axios from "axios";
-import { User } from "./Components/@types";
+import { User, SigIn } from "./Components/@types";
 
 const api = axios.create({baseURL: "http://localhost:3333"});
 
@@ -8,5 +8,18 @@ export const getUsers = async ():Promise<User[]> => {
 }
 
 export const createUser = async (user: Omit<User, 'id'>): Promise<User> => {
-    return await api.post("/users", user);
+    return await api.post("/register", user);
+}
+export const updateUser = async (user: Omit<User, 'id'>): Promise<User> => {
+    return await api.put("/register", user);
+}
+
+export const postSigin = async (sigIn: SigIn) => {
+    try {
+        const response = await api.post("/signin", sigIn)
+        return response.data
+    } catch (error) {
+        return error;
+        
+    }
 }

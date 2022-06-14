@@ -54,4 +54,7 @@ export const StyledLink = styled(Link)`
     color: #555555;
     font-size: 18px;
     margin-top: 26px;
+    &:hover {
+        color: #76BB4C;
+    }
 `

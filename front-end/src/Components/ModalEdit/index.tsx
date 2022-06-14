@@ -1,48 +1,60 @@
 import { useFormik } from 'formik';
-import { Form } from 'react-bootstrap';
+import { Form, Modal } from 'react-bootstrap';
 import GroupInput from '../GroupInput';
-import * as Yup from 'yup'
+import * as Yup from 'yup';
+import { updateUser } from '../../api';
 import PAlerta from '../PAlerta';
 import ButtonEnter from '../ButtonEnter';
-import { createUser } from '../../api';
+import ImagemUsuario from '../ImagemUsuario';
+import backgroundPage from '../assets/images/logoLogin.png';
+import * as S from './styles';
 
-const FormComponentCreate = () => {
-  
-  const validationSchema = Yup.object({
-    name: Yup.string().required('O nome é obrigatório'),
-    email: Yup.string().email('Insira um e-mail válido').required('O e-mail é obrigatório'),
-    password: Yup.string().required('A senha é obrigatória'),
-    confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'As senhas não conferem').required('A confirmação de senha é obrigatória'),
-    apartment: Yup.string().required('O apartamento é obrigatório'),
-    link: Yup.string()
-  })
+interface Props{
+    show: boolean;
+    onHide: () => void;
+}
 
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      password: '',
-      confirmPassword: '',
-      apartment: '',
-      link:''
-    },
-    validationSchema,
-    onSubmit: values => {
-      createUser({
-        name: values.name,
-        password: values.password,
-        email: values.email,
-        apartment: values.apartment,
-        link: values.link
+const ModalEdit = ({show, onHide}:Props) => {
+
+    const validationSchema = Yup.object({
+        name: Yup.string().required('O nome é obrigatório'),
+        email: Yup.string().email('Insira um e-mail válido').required('O e-mail é obrigatório'),
+        password: Yup.string().required('A senha é obrigatória'),
+        confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'As senhas não conferem').required('A confirmação de senha é obrigatória'),
+        apartment: Yup.string().required('O apartamento é obrigatório'),
+        link: Yup.string()
       })
-      
-    }
-  })
-
+    
+      const formik = useFormik({
+        initialValues: {
+          name: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+          apartment: '',
+          link:''
+        },
+        validationSchema,
+        onSubmit: values => {
+          console.log({
+            name: values.name,
+            password: values.password,
+            email: values.email,
+            apartment: values.apartment,
+            link: values.link
+          })
+          onHide()
+          
+        }
+      })
 
   return (
-    <Form onSubmit={formik.handleSubmit} >
-      <GroupInput type='text' placeholder='nome' id = 'name' value = {formik.values.name}  onChange = {formik.handleChange} isInvalid={formik.touched.name && !!formik.errors.name} isValid={formik.touched.name && !formik.errors.name}/>
+    <Modal show = {show} onHide = {onHide}>
+        <Modal.Header closeButton></Modal.Header>
+        <S.StyledImagem src = {backgroundPage} alt = 'seu nome' width='
+        20%' height='80px'/>
+        <Form onSubmit={formik.handleSubmit} className='p-4'>
+        <GroupInput type='text' placeholder='nome' id = 'name' value = {formik.values.name}  onChange = {formik.handleChange} isInvalid={formik.touched.name && !!formik.errors.name} isValid={formik.touched.name && !formik.errors.name}/>
       {formik.errors.name && formik.touched.name 
           && ( 
             <PAlerta>
@@ -84,10 +96,10 @@ const FormComponentCreate = () => {
 
       <GroupInput type='text' placeholder='link da foto' id = 'link' value = {formik.values.link}  onChange = {formik.handleChange} />
 
-      <ButtonEnter typeButton='submit' text='CADASTRAR'/>
-      
-    </Form>
+      <ButtonEnter typeButton='submit' text='ATUALIZAR'/>
+        </Form>
+    </Modal>
   )
 }
 
-export default FormComponentCreate; 
+export default ModalEdit;

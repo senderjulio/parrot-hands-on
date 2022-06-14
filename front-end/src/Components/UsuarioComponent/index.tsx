@@ -1,10 +1,12 @@
 import ImagemUsuario from '../ImagemUsuario';
 import * as S from './styles';
 import imgUsuario from '../assets/images/fotousuario.png'
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
+import ModalEdit from '../ModalEdit';
 
 
 const UsuarioComponent = () => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <Fragment>
         <ImagemUsuario img = {imgUsuario} alt = 'seu nome' width='
@@ -15,7 +17,9 @@ const UsuarioComponent = () => {
             <S.StyledP>user@gmail.com</S.StyledP>
             <S.StyledP>00 publicações</S.StyledP>
         </S.StyledInfUser>
-        <S.StyledButton>Editar pefil</S.StyledButton>
+        <S.StyledButton onClick={()=>{setOpenModal(true)}}>Editar pefil</S.StyledButton>
+
+        <ModalEdit show ={openModal} onHide = {()=>setOpenModal(false)}/>
     </Fragment>
 
 

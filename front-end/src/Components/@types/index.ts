@@ -3,6 +3,11 @@ export interface User{
     name: string;
     email: string;
     password: string;
-    apartamento: string;
+    apartment: string;
     link:string;
+}
+
+export interface SigIn{
+    email: string,
+    password: string,
 }
