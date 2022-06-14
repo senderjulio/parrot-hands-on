@@ -16,7 +16,6 @@ export const StyledContainer = styled(Container)`
 
 export const StyledCard = styled(Card)`
     width: 30%;
-
     padding: 20px 5px;
 `
 

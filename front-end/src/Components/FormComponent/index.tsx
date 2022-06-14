@@ -3,6 +3,7 @@ import backgroundPage from '../assets/images/logoLogin.png';
 import * as S from './styles';
 import { ReactNode } from 'react';
 
+
 type Props = {
   children: ReactNode,
   titulo: string,

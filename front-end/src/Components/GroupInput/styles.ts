@@ -6,3 +6,4 @@ export const StyledFormGroup = styled(Form.Control)`
     border-radius: 10px;
     text-align: center;
 `
+
