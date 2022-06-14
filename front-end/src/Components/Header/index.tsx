@@ -10,19 +10,19 @@ const Header: React.FC = () => {
   useEffect(()=>{console.log(location.pathname)},[location.pathname])
   return (
     <S.StylesHeader>
-    <S.StylesNav>
-    <div>
-      <S.StylesImg src={logo} alt="logo Parrot" />
-    </div>
-    <div>
-        <S.StylesUl>
-          <S.MenuLink  to="/cadastro">Olá, usuário |</S.MenuLink>
-          <S.MenuLinkS to="/sair">sair</S.MenuLinkS>        
-      </S.StylesUl>
+      <S.StylesNav>
+      <div>
+        <S.StylesImg src={logo} alt="logo Parrot" />
       </div>
-    
-    </S.StylesNav>
-  </S.StylesHeader>
+      <div>
+          <S.StylesUl>
+            <S.MenuLink  to="/cadastro">Olá, usuário |</S.MenuLink>
+            <S.MenuLinkS to="/sair">sair</S.MenuLinkS>        
+        </S.StylesUl>
+        </div>
+      
+      </S.StylesNav>
+    </S.StylesHeader>
   );
 }
 

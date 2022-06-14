@@ -31,21 +31,23 @@ export const MenuLinkS = styled(Link)`
 `
 
 export const StylesNav = styled.nav`
- display: flex;
+    display: flex;
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     align-items: center;
 
+
 `
 
 export const StylesHeader = styled.header`
- position: fixed;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     z-index: 999;
+    background-color: white;
 
 `
 export const StylesImg = styled.img`
@@ -76,7 +78,7 @@ export const StylesUl = styled.ul`
 `
 
 export const StylesLi = styled.li`
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;

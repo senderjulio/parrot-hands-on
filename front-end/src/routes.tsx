@@ -15,6 +15,7 @@ const AppRoutes: React.FC = () => {
         <Route path="/" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/perfil-do-usuario" element={<PerfilDoUsuario />} />
+        <Route path="/perfilusuario" element={<PerfilUsuario />} />
         <Route path="/feed" element={<Feed />} />
       </Routes>
     </BrowserRouter>
