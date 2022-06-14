@@ -1,7 +1,7 @@
 const db = require("../../../infrastructure/database");
 const { DataTypes } = require("sequelize");
 
-export const Users = db.define(
+export const Posts = db.define(
     "Users",
     {
       id: {
@@ -9,17 +9,18 @@ export const Users = db.define(
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
-        type: DataTypes.STRING,
+      texto: {
+        type: Sequelize.STRING
       },
-      email: {
-        type: DataTypes.STRING,
-      },
-      apartment: {
-        type: DataTypes.INTEGER,
-      },
-      password: {
-        type: DataTypes.STRING(300),
+      userId: {
+        type: Sequelize.DataTypes.INTEGER,
+        references: {
+          model: {
+            tableName: 'users'            
+          },
+          key: 'id'
+        },
+        allowNull: false
       },    
       createdAt: {
         type: DataTypes.DATE,
