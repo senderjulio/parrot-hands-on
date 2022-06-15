@@ -17,15 +17,25 @@ export const StyledContainer = styled(Container)`
 export const StyledCard = styled(Card)`
     width: 30%;
     padding: 20px 5px;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 1000px) {
+        width: 50%;
+    }
 `
 
 export const StyledLinkImg = styled(Link)`
     text-align: center;
+
 `
 
 export const StyledCardImg = styled(Card.Img)`
     width: 30%;
     margin: auto;
+    @media screen and (max-width: 768px) {
+        width: 50%;
+    }
 `
 
 export const StyledCardTitle = styled(Card.Title)`

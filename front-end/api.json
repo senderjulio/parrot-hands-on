@@ -18,12 +18,124 @@
       "id": 2
     },
     {
+      "name": "Roberto Odeia Hands On",
+      "password": "$2a$10$.01BesEUkW3q1uEOMfKYauV.n3SNvcY8aX5SBmbJNDAaRUT6UBEb6",
       "email": "juniordering@gmail.com",
-      "name": "Roberto",
-      "password": "$2a$10$Gqy6ttj/jjgRHDr7CT3MYu35xgshqbmWhiJh.nEGBNbSbryjB.c4K",
-      "apartment": "32",
-      "id": 3,
-      "link":"https://i.pravatar.cc/150?u=a042581f4b44"
+      "apartment": "47B",
+      "link": "https://i.pravatar.cc/150?u=a042581f4b44",
+      "id": 3
+    },
+    {
+      "email": "qualquer@gmail.com",
+      "password": "$2a$10$6tjTwaHCZXFoBpaNxDZj5enW/1axGxz5qknrFJ7hGY0Xu33Pxwdb.",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 4
+    },
+    {
+      "email": "qualquer2@gmail.com",
+      "password": "$2a$10$xtwPWFw3/3LWo89DTbFwfex2j8VuYVedyyWwY6smYxYHcmILm3pAO",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 5
+    },
+    {
+      "email": "qualquer3@gmail.com",
+      "password": "$2a$10$zMcF8IJHfskcd4LrByimO.fBm2QjdgB93rJEk6Dlcwblffty0Z0Cq",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 6
+    },
+    {
+      "email": "qualquer4@gmail.com",
+      "password": "$2a$10$R4Bl5onBZ10RHx/iQuw./OhMwHvHr.qhMw2zKJsR3IQiGNyJiv1WW",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 7
+    },
+    {
+      "email": "qualquer5@gmail.com",
+      "password": "$2a$10$VVwxfQXoPAjFWRiJi1bXRuCUbuLrI8lRSZD1EpQ7O2acznSu4uKom",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 8
+    },
+    {
+      "email": "qualquer6@gmail.com",
+      "password": "$2a$10$RA8AAe5XiAj8ECu3JUQlSu8sp4mio/L4rv2DlWL5QlH4QFmiwTwmq",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 9
+    },
+    {
+      "email": "qualquer7@gmail.com",
+      "password": "$2a$10$fWn5Ocz/PyivCL1aaSMwGemTOsd/oUVSI8C53yNUiV.lOT8hs3BDK",
+      "name": "Junior Dering",
+      "apartment": "1c",
+      "link": "",
+      "id": 10
+    },
+    {
+      "email": "qualquer8@gmail.com",
+      "password": "$2a$10$NNV94.V4o6XVy1AZywUfy..9toNG2/aCguV0fxXlGsMCQ/YWX9D5K",
+      "name": "Junior Dering",
+      "apartment": "1b",
+      "link": "",
+      "id": 11
+    },
+    {
+      "email": "qualquer9@gmail.com",
+      "password": "$2a$10$2ErNv4o/KJvn1qx09RK4MevNMhmzb5l/QxIcmhjs5XLxzW8vSNIK.",
+      "name": "Junior Dering",
+      "apartment": "1b",
+      "link": "",
+      "id": 12
+    },
+    {
+      "email": "qualquer10@gmail.com",
+      "password": "$2a$10$isYCHwb4XVjIAmHyofLFlOiV.8hiIYedNeRPGHzv11YXRcnj2qNYC",
+      "name": "Junior Dering",
+      "apartment": "1b",
+      "link": "",
+      "id": 13
+    },
+    {
+      "email": "qualquer11@gmail.com",
+      "password": "$2a$10$Ob8M7UszXxUlJTxOXM3tRev5TAv6TSdDhaxIjMwOgfnCxqjexOUjO",
+      "name": "Junior Dering",
+      "apartment": "1b",
+      "link": "",
+      "id": 14
+    },
+    {
+      "email": "qualquer12@gmail.com",
+      "password": "$2a$10$2BVk6qsfQiDfFVzroU5W2ODXhCdL15.Q8y0Yg8bdclXQwQyLCV3jy",
+      "name": "Junior Dering",
+      "apartment": "1b",
+      "link": "",
+      "id": 15
+    },
+    {
+      "email": "qualquer13@mail.com",
+      "password": "$2a$10$9DqQ8dgqjiCS4JyFyclv9uuHRvNuAd9FfJE89wFHzXXpVJ/rbGcQC",
+      "name": "Junior Dering",
+      "apartment": "1d",
+      "link": "",
+      "id": 16
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "apatment": "1B",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ]
 }
