@@ -5,10 +5,13 @@ import * as Yup from 'yup'
 import PAlerta from '../PAlerta';
 import ButtonEnter from '../ButtonEnter';
 import { postSigin } from '../../api';
+import { useNavigate } from 'react-router-dom';
 
 
 const FormComponentLogin = () => {
   
+  const navigate = useNavigate();
+
   const validationSchema = Yup.object({
     email: Yup.string().email('Insira um e-mail válido').required('O e-mail é obrigatório'),
     password: Yup.string().required('A senha é obrigatória')
@@ -23,11 +26,11 @@ const FormComponentLogin = () => {
     onSubmit: async values => {
       const { accessToken, user} = await postSigin(values)      
       if (user !== undefined) {        
-        window.location.href = '/perfilusuario'
+        navigate(`/feedusuario/:${user.id}`)
       }
       else{
         alert('Usuário e senha incorretos')        
-      }
+      }      
     }
   })
 

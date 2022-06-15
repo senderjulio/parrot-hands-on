@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "leane@gamil.com",
+      "password": "123456",
+      "apartment": "1B",
+      "link": "https://i.pravatar.cc/150?u=a042581f4b44"
+    },
+    {
+      "name": "Junior Dering",
+      "password": "123456",
+      "email": "juniordering@hotmail.com",
+      "apartment": "1",
+      "link": "",
+      "id": 2
+    },
+    {
+      "email": "juniordering@gmail.com",
+      "name": "Roberto",
+      "password": "$2a$10$Gqy6ttj/jjgRHDr7CT3MYu35xgshqbmWhiJh.nEGBNbSbryjB.c4K",
+      "apartment": "32",
+      "id": 3,
+      "link":"https://i.pravatar.cc/150?u=a042581f4b44"
+    }
+  ]
+}
