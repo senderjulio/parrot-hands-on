@@ -1,12 +1,13 @@
 import ImagemUsuario from '../ImagemUsuario';
 import * as S from './styles';
 import imgUsuario from '../assets/images/fotousuario.png'
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import ModalEdit from '../ModalEdit';
 
 
 const UsuarioComponent = () => {
   const [openModal, setOpenModal] = useState(false);
+
   return (
     <Fragment>
         <ImagemUsuario img = {imgUsuario} alt = 'seu nome' width='
