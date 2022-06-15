@@ -1,6 +1,5 @@
 import { Users } from "../models/users";
 import { Request, Response} from "express";
-import { userService } from "../service";
 import bcrypt from "bcryptjs";
 import { secret } from "../../../infrastructure/middleware/secret"
 import jwt from "jsonwebtoken";
