@@ -28,7 +28,10 @@ const FormComponentLogin = () => {
     },
     validationSchema,
     onSubmit: async values => {
-      const { accessToken, user} = await postSigin(values)      
+      console.log(values);      
+      const {token, user} = await postSigin(values)
+      console.log(user);
+            
       if (user !== undefined) {     
         dispatch(setLogin({isloged:true}))
         localStorage.setItem('login','true')

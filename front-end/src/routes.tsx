@@ -20,6 +20,8 @@ const AppRoutes: React.FC = () => {
     login = false
   }
 
+  console.log(login);
+  
 
   return (
     <BrowserRouter>

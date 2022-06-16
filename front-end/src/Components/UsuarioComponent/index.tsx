@@ -24,8 +24,7 @@ const UsuarioComponent = () => {
       let id = parseInt(window.location.search.split('?')[1]);
       const user = await getUsers(id)
       dispatch(setUsersEdit({users:user}))
-      setUsers(user);   
-      localStorage.setItem('user', 'false')   
+      setUsers(user);    
     }
     pegarUser();         
   }, [])

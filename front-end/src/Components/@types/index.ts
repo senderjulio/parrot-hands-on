@@ -3,8 +3,8 @@ export interface User{
     name: string;
     email: string;
     password: string;
-    apartment: string;
-    link:string;
+    apartment: string | number;
+    link?:string;
 }
 
 export interface SigIn{

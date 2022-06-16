@@ -45,7 +45,6 @@ const ModalEdit = ({show, onHide}:Props) => {
             password: values.password,
             email: values.email,
             apartment: values.apartment,
-            link: values.link
           })
           onHide()
           window.location.reload()
@@ -97,7 +96,7 @@ const ModalEdit = ({show, onHide}:Props) => {
               {formik.errors.apartment}
             </PAlerta> 
       )}
-
+    
       <GroupInput type='text' placeholder='link da foto' id = 'link' value = {formik.values.link}  onChange = {formik.handleChange} />
 
       <ButtonEnter typeButton='submit' text='ATUALIZAR'/>

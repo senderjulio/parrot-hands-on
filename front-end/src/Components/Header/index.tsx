@@ -14,8 +14,8 @@ const Header: React.FC = () => {
   const handleLogout = () => {
     dispatch(setLogin({isloged: false}));
     localStorage.setItem('login', 'false');
-    navigate('/');
     alert('Você foi deslogado');
+    window.location.reload();
   }
   return (
     <S.StylesHeader>

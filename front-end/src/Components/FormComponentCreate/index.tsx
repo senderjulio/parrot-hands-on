@@ -35,8 +35,7 @@ const FormComponentCreate = () => {
         name: values.name,
         password: values.password,
         email: values.email,
-        apartment: values.apartment,
-        link: values.link
+        apartment: parseInt(values.apartment),
       })
 
       //@ts-ignore
