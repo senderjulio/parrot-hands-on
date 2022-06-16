@@ -24,7 +24,7 @@ export const AuthController = {
             
             const token = jwt.sign({
                 id: userLogado.id,
-                nome: userLogado.nome,
+                name: userLogado.name,
                 email: userLogado.email
             }, secret.key);
 
