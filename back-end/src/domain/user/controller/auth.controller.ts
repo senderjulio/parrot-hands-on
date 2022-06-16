@@ -28,7 +28,9 @@ export const AuthController = {
                 email: userLogado.email
             }, secret.key);
 
-            return res.json(token);
+            const dados = {"token":(token), "user": userLogado}
+
+            return res.status(200).json(dados);
         } catch (error) {
             console.log('Login não realizado');
             console.error(error);
