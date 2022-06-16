@@ -1,8 +1,13 @@
-import express from 'express';
+const express = require('express');
+const routes = require('./routes');
+const db = require("./../src/infrastructure/database/index");
 
 const app = express();
-const routes = require("./routes");
+
+app.use(express.json())
+
+db.hasConnection();
 
 app.use(routes);
 
-export default app;
+app.listen(3000, () => console.log('Servidor no ar na porta 3000'));
