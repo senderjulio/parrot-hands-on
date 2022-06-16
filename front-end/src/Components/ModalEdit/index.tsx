@@ -2,13 +2,13 @@ import { useFormik } from 'formik';
 import { Form, Modal } from 'react-bootstrap';
 import GroupInput from '../GroupInput';
 import * as Yup from 'yup';
-import { getUsers, updateUser } from '../../api';
+import { updateUser } from '../../api';
 import PAlerta from '../PAlerta';
 import ButtonEnter from '../ButtonEnter';
 import backgroundPage from '../assets/images/logoLogin.png';
 import * as S from './styles';
-import { useEffect, useState } from 'react';
-import { User } from '../@types';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 interface Props{
     show: boolean;
@@ -17,18 +17,8 @@ interface Props{
 
 const ModalEdit = ({show, onHide}:Props) => {
 
-  const [userGet, setUsergGet] = useState<User[]>([] as User[])
+    const userEdit = useSelector((state: RootState) => state.persistedReducer.users);
 
-    useEffect(()=>{
-        let id = parseInt(window.location.search.split('?')[1])
-        let users = async (id:number)=>{
-            let usuarios = await getUsers(id)            
-            setUsergGet(usuarios)
-            console.log(usuarios);
-        }
-        users(id)        
-    },[])
-    
     const validationSchema = Yup.object({
         name: Yup.string().required('O nome é obrigatório'),
         email: Yup.string().email('Insira um e-mail válido').required('O e-mail é obrigatório'),
@@ -36,27 +26,29 @@ const ModalEdit = ({show, onHide}:Props) => {
         confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'As senhas não conferem').required('A confirmação de senha é obrigatória'),
         apartment: Yup.string().required('O apartamento é obrigatório'),
         link: Yup.string()
-      })     
-
+      })
+      
       const formik = useFormik({
+        enableReinitialize: true,
         initialValues: {
-          name: '',
-          email: '',
+          name: userEdit.name,
+          email: userEdit.email,
           password: '',
           confirmPassword: '',
-          apartment: '',
-          link:''
+          apartment: userEdit.apartment,
+          link:userEdit.link
         },
         validationSchema,
         onSubmit: values => {
-          console.log({
+          updateUser(userEdit.id,{
             name: values.name,
             password: values.password,
             email: values.email,
             apartment: values.apartment,
             link: values.link
           })
-          onHide()          
+          onHide()
+          window.location.reload()
         }
       })
 

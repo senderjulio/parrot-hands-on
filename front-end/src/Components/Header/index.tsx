@@ -1,10 +1,22 @@
 import React, { useEffect } from 'react';
 import logo from '../../Components/assets/images/logo.png';
-
+import { useDispatch, useSelector } from 'react-redux';
 import * as S from "./styled"
+import { setLogin } from '../store/users';
+import { RootState } from '../store';
+import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state: RootState) => state.persistedReducer.users);
 
+  const handleLogout = () => {
+    dispatch(setLogin({isloged: false}));
+    localStorage.setItem('login', 'false');
+    navigate('/');
+    alert('Você foi deslogado');
+  }
   return (
     <S.StylesHeader>
       <S.StylesNav>
@@ -13,8 +25,8 @@ const Header: React.FC = () => {
       </div>
       <div>
           <S.StylesUl>
-            <S.MenuLink  to="/cadastro">Olá, usuário |</S.MenuLink>
-            <S.MenuLinkS to="/">sair</S.MenuLinkS>        
+            <S.MenuLink  to={`/perfilusuario/?${user.id}`}>{user.name} |</S.MenuLink>
+            <S.MenuButton onClick={handleLogout}>sair</S.MenuButton>        
         </S.StylesUl>
         </div>
       

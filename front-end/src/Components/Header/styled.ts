@@ -29,6 +29,21 @@ export const MenuLinkS = styled(Link)`
     &:hover{color:#76BB4C ; } 
 
 `
+export const MenuButton = styled.button`
+    display: block;
+    padding: 0 5px;
+    text-decoration: none;
+    color :#6033AA;
+    font-size: 20px;
+    line-height: 24.38px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    border: none;
+    &:hover{color:#76BB4C ; } 
+
+`
 
 export const StylesNav = styled.nav`
     display: flex;
