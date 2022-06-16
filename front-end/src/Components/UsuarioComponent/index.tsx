@@ -5,10 +5,11 @@ import { Fragment, useEffect, useState } from 'react';
 import ModalEdit from '../ModalEdit';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { User } from '../@types';
-import { getUsers } from '../../api';
+import { Post, User } from '../@types';
+import { getPosts, getUsers } from '../../api';
 import { useDispatch } from 'react-redux';
 import { setUsersEdit } from '../store/users';
+import { setPostsRedux } from '../store/posts';
 
 
 const UsuarioComponent = () => {
@@ -17,17 +18,24 @@ const UsuarioComponent = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const [users, setUsers] = useState<User>({} as User);
+  const [posts, setPosts] = useState<Post[]>([]);
   const userGet:User = useSelector((state: RootState) => state.persistedReducer.users);
 
   useEffect(() => {
     const pegarUser = async () => {
       let id = parseInt(window.location.search.split('?')[1]);
       const user = await getUsers(id)
+      const post = await getPosts()
       dispatch(setUsersEdit({users:user}))
-      setUsers(user);    
+      dispatch(setPostsRedux({posts:post}))
+      setUsers(user); 
+      setPosts(post)   
     }
     pegarUser();         
   }, [])
+
+  console.log(posts);
+  
 
   return (
     <Fragment>
@@ -37,7 +45,7 @@ const UsuarioComponent = () => {
             <S.StyledH1> {users.name} </S.StyledH1>
             <S.StyledP>{users.apartment} apartamento</S.StyledP>
             <S.StyledP>{userGet.email}</S.StyledP>
-            <S.StyledP>{} publicações</S.StyledP>
+            <S.StyledP>{posts.length} publicações</S.StyledP>
         </S.StyledInfUser>
         <S.StyledButton onClick={()=>{setOpenModal(true)}}>Editar pefil</S.StyledButton>
 

@@ -7,7 +7,7 @@ export const getUsers = (id?:number):Promise<User> =>{
     return  api.get<User>(`/user/${id}`).then(renponse=>renponse.data)
 }
 export const getPosts = ():Promise<Post[]> =>{
-    return  api.get<Post[]>(`/posts/`).then(renponse=>renponse.data)
+    return  api.get<Post[]>(`/post/`).then(renponse=>renponse.data)
 }
 
 // export const getUsers = async ():Promise<User[]> => {

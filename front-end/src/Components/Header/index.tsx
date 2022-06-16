@@ -4,11 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as S from "./styled"
 import { setLogin } from '../store/users';
 import { RootState } from '../store';
-import { useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.persistedReducer.users);
 
   const handleLogout = () => {

@@ -13,7 +13,7 @@ export interface SigIn{
 }
 
 export interface Post{
-    description: string;
-    name: string;
-    apartment: string;
+    userId: number;
+    texto: string;
+    createdAt: Date;
 }

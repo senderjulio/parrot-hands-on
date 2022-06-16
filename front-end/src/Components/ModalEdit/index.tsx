@@ -88,7 +88,7 @@ const ModalEdit = ({show, onHide}:Props) => {
               {formik.errors.confirmPassword}
             </PAlerta> 
       )}
-
+      {/* @ts-ignore */}
       <GroupInput type='text' placeholder='unidade/apartamento' id = 'apartment' value = {formik.values.apartment}  onChange = {formik.handleChange} isInvalid={formik.touched.apartment && !!formik.errors.apartment} isValid={formik.touched.apartment && !formik.errors.apartment}/>
       {formik.errors.apartment && formik.touched.apartment 
           && ( 
@@ -96,7 +96,7 @@ const ModalEdit = ({show, onHide}:Props) => {
               {formik.errors.apartment}
             </PAlerta> 
       )}
-    
+      {/* @ts-ignore */}
       <GroupInput type='text' placeholder='link da foto' id = 'link' value = {formik.values.link}  onChange = {formik.handleChange} />
 
       <ButtonEnter typeButton='submit' text='ATUALIZAR'/>
