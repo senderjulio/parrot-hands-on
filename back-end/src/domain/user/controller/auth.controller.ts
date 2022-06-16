@@ -34,6 +34,5 @@ export const AuthController = {
             console.error(error);
             return res.status(500).json('Erro ao realizar login');
         }
-
     }
 };

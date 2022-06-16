@@ -2,7 +2,7 @@ const db = require("../../../infrastructure/database");
 const { DataTypes } = require("sequelize");
 
 export const Posts = db.define(
-    "Users",
+    "Posts",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -10,10 +10,10 @@ export const Posts = db.define(
         autoIncrement: true,
       },
       texto: {
-        type: Sequelize.STRING
+        type: DataTypes.STRING,
       },
       userId: {
-        type: Sequelize.DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
         references: {
           model: {
             tableName: 'users'            
@@ -30,6 +30,6 @@ export const Posts = db.define(
       },      
     },
     {
-      tableName: "users",
+      tableName: "posts",
     }
   );
