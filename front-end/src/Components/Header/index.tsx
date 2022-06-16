@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import logo from '../../Components/assets/images/logo.png';
-
+import { useDispatch, useSelector } from 'react-redux';
 import * as S from "./styled"
+import { setLogin } from '../store/users';
+import { RootState } from '../store';
 
 const Header: React.FC = () => {
-
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.usersSlice.users);
   return (
     <S.StylesHeader>
       <S.StylesNav>
@@ -13,8 +16,8 @@ const Header: React.FC = () => {
       </div>
       <div>
           <S.StylesUl>
-            <S.MenuLink  to="/cadastro">Olá, usuário |</S.MenuLink>
-            <S.MenuLinkS to="/">sair</S.MenuLinkS>        
+            <S.MenuLink  to={`/perfilusuario/?${user.id}`}>{user.name} |</S.MenuLink>
+            <S.MenuLinkS to="/" onClick={()=>{dispatch(setLogin({isloged:false}))}}>sair</S.MenuLinkS>        
         </S.StylesUl>
         </div>
       

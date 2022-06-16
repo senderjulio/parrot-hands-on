@@ -6,11 +6,15 @@ import PAlerta from '../PAlerta';
 import ButtonEnter from '../ButtonEnter';
 import { postSigin } from '../../api';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setLogin } from '../store/users';
+
 
 
 const FormComponentLogin = () => {
   
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
     email: Yup.string().email('Insira um e-mail válido').required('O e-mail é obrigatório'),
@@ -25,8 +29,9 @@ const FormComponentLogin = () => {
     validationSchema,
     onSubmit: async values => {
       const { accessToken, user} = await postSigin(values)      
-      if (user !== undefined) {        
-        navigate(`/feedusuario/:${user.id}`)
+      if (user !== undefined) {     
+        dispatch(setLogin({isloged:true}))
+        navigate(`/perfilusuario/?${user.id}`)
       }
       else{
         alert('Usuário e senha incorretos')        

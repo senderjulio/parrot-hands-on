@@ -5,8 +5,11 @@ import * as Yup from 'yup'
 import PAlerta from '../PAlerta';
 import ButtonEnter from '../ButtonEnter';
 import { createUser } from '../../api';
+import { useNavigate } from 'react-router-dom';
 
 const FormComponentCreate = () => {
+
+  const navigate = useNavigate();
   
   const validationSchema = Yup.object({
     name: Yup.string().required('O nome é obrigatório'),
@@ -27,14 +30,25 @@ const FormComponentCreate = () => {
       link:''
     },
     validationSchema,
-    onSubmit: values => {
-      createUser({
+    onSubmit: async values => {
+      const a = await createUser({
         name: values.name,
         password: values.password,
         email: values.email,
         apartment: values.apartment,
         link: values.link
       })
+
+      //@ts-ignore
+      if (a.status !== 201) {
+      //@ts-ignore
+        alert(`Erro ao criar usuário: ${a.response.data}`)
+      }else{
+        alert('Usuário criado com sucesso')
+        navigate('/')
+      }
+      
+      
       
     }
   })
