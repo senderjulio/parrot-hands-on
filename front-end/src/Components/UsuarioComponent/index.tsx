@@ -18,8 +18,7 @@ const UsuarioComponent = () => {
   const [openModal, setOpenModal] = useState(false);
   const [users, setUsers] = useState<User>({} as User);
   const userGet:User = useSelector((state: RootState) => state.persistedReducer.users);
-  // const userGet2= useSelector((state: RootState) => state.usersSlice.qtdPosts);  
-  // localStorage.setItem('user', JSON.stringify(userGet));
+
   useEffect(() => {
     const pegarUser = async () => {
       let id = parseInt(window.location.search.split('?')[1]);
