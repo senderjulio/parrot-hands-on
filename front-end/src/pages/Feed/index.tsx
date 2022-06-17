@@ -9,7 +9,7 @@ import PostContainer from '../../Components/PostContainer';
 const Feed: React.FC = () => {
   return (
 <div>
-<Header/>
+    <Header/>
     <CreatePost/>
 </div>
   

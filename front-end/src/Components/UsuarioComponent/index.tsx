@@ -33,8 +33,6 @@ const UsuarioComponent = () => {
     }
     pegarUser();         
   }, [])
-
-  console.log(posts);
   
 
   return (

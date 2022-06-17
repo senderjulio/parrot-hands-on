@@ -8,6 +8,8 @@ import { RootState } from '../store';
 const Header: React.FC = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.persistedReducer.users);
+  localStorage.setItem('nome', user.name);
+  let nome = localStorage.getItem('nome');
 
   const handleLogout = () => {
     dispatch(setLogin({isloged: false}));
@@ -19,11 +21,14 @@ const Header: React.FC = () => {
     <S.StylesHeader>
       <S.StylesNav>
       <div>
-        <S.StylesImg src={logo} alt="logo Parrot" />
+        <S.MenuLink to={`/feed/?${user.id}`}>
+          <S.StylesImg src={logo} alt="logo Parrot" />
+        </S.MenuLink>
+
       </div>
       <div>
           <S.StylesUl>
-            <S.MenuLink  to={`/perfilusuario/?${user.id}`}>{user.name} |</S.MenuLink>
+            <S.MenuLink  to={`/perfilusuario/?${user.id}`}>{nome} |</S.MenuLink>
             <S.MenuButton onClick={handleLogout}>sair</S.MenuButton>        
         </S.StylesUl>
         </div>
