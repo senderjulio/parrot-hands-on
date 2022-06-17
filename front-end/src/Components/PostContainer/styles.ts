@@ -1,8 +1,12 @@
 
 import styled from "styled-components";
 
+interface Props{
+    margintop?: string;
+}
 
-export const StyledDid= styled.div`
+
+export const StyledDid= styled.div<Props>`
     display: block;
     justify-content: center;
     align-items: center;
@@ -10,6 +14,6 @@ export const StyledDid= styled.div`
     #C5C5C5;
     width: 700px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: ${props => props.margintop};
 
 `

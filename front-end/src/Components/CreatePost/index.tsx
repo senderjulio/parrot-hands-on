@@ -58,7 +58,7 @@ function CreatePost() {
     })
 
   return (
-    <PostContainer  >
+    <PostContainer marginTop="100px"  >
       <S.StyledForm onSubmit={formik.handleSubmit} >
         <div className="align-self-center " >
         < img className="img p-2 " src={imgUsuario} />
