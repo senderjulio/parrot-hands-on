@@ -28,6 +28,7 @@ const MainPerfilUsuario = () => {
       </CardUser>
       {postsFilter.length != 0 ? postsFilter.map((item, index)=>(
         <CardUser border="1px"  key={index}>
+          {/* @ts-ignore */}
           <PostsUsuario name = {userGet.name} apartment={userGet.apartment} post = {item.texto} data = {convertData(item.createdAt)} />
         </CardUser>
       )).reverse()

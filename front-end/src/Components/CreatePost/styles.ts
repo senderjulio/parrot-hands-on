@@ -23,13 +23,13 @@ padding:10px;
 outline: none;
  `
  export const StyledForm = styled.form`
- display:flex; 
- flex-direction: column;
- justify-content: end;
- margin-top: 7rem;
- align-items: end;
+    display:flex; 
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    margin-top: 10px;
+    border-bottom: 2px solid #C5C5C5; ;
 
- 
  `
 
  export const StyledLink = styled(Link)`
