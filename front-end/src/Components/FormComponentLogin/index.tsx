@@ -30,12 +30,11 @@ const FormComponentLogin = () => {
     onSubmit: async values => {
       console.log(values);      
       const {token, user} = await postSigin(values)
-      console.log(user);
+      console.log(user, token);
             
       if (user !== undefined) {     
         dispatch(setLogin({isloged:true}))
         dispatch(setUsersEdit({users:user}))
-        localStorage.setItem('login','true')
         navigate(`/feed/?${user.id}`)
       }
       else{

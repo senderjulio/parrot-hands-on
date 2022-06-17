@@ -8,12 +8,10 @@ import { RootState } from '../store';
 const Header: React.FC = () => {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.persistedReducer.users);
-  localStorage.setItem('nome', user.name);
-  let nome = localStorage.getItem('nome');
+  let nome = user.name
 
   const handleLogout = () => {
     dispatch(setLogin({isloged: false}));
-    localStorage.setItem('login', 'false');
     alert('Você foi deslogado');
     window.location.reload();
   }
