@@ -7,7 +7,7 @@ import ButtonEnter from '../ButtonEnter';
 import { postSigin } from '../../api';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setLogin } from '../store/users';
+import { setLogin, setUsersEdit } from '../store/users';
 
 
 
@@ -34,8 +34,9 @@ const FormComponentLogin = () => {
             
       if (user !== undefined) {     
         dispatch(setLogin({isloged:true}))
+        dispatch(setUsersEdit({users:user}))
         localStorage.setItem('login','true')
-        navigate(`/perfilusuario/?${user.id}`)
+        navigate(`/feed/?${user.id}`)
       }
       else{
         alert('Usuário e senha incorretos')        

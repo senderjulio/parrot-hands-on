@@ -15,5 +15,5 @@ export interface SigIn{
 export interface Post{
     userId: number;
     texto: string;
-    createdAt: Date;
+    id: number;
 }

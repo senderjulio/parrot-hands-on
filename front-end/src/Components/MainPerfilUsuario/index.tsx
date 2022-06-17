@@ -9,32 +9,28 @@ import { RootState } from '../store';
 import UsuarioComponent from '../UsuarioComponent';
 import { format, compareAsc } from 'date-fns'
 import  * as S from './styles';
+import  helper  from '../helper';
+import ContainerMain from '../ContainerMain';
 
 const MainPerfilUsuario = () => {
+
+  const { convertData } = helper()
 
   const userGet = useSelector((state: RootState) => state.persistedReducer.users);
   const postsGet = useSelector((state: RootState) => state.postsSlice.posts);
   const postsFilter = postsGet.filter(post => post.userId === userGet.id);
-  postsFilter.map(post => {console.log(new Date(post.createdAt).getTime())});
-  
-
-  
-  
-
-  
-  
 
   useEffect(()=>{
   },[])
 
   return (
-    <S.StyledMain>
+    <ContainerMain>
       <CardUser border = '3px'>
         <UsuarioComponent />
       </CardUser>
-      {postsFilter.length != 0 ? postsFilter.map((item)=>(
-        <CardUser border="1px" >
-          <PostsUsuario name = {userGet.name} apartment={userGet.apartment} post = {item.texto} />
+      {postsFilter.length != 0 ? postsFilter.map((item, index)=>(
+        <CardUser border="1px"  key={index}>
+          <PostsUsuario name = {userGet.name} apartment={userGet.apartment} post = {item.texto} data = {convertData(item.createdAt)} />
         </CardUser>
       ))
 
@@ -42,7 +38,7 @@ const MainPerfilUsuario = () => {
 
 
         : <NoPostsUsuario/>}
-    </S.StyledMain>
+    </ContainerMain>
   )
 }
 

@@ -22,6 +22,14 @@ export const createUser = async (user: Omit<User, 'id'>): Promise<User> => {
     }
     
 }
+export const createPosts = async (post: Omit<Post, 'id'>): Promise<Post> => {
+    try {
+        return await api.post("/post/cadastrar",post);
+    } catch (error) {
+        return error as unknown as Post;        
+    }
+    
+}
 export const updateUser = async (id:number,user: Omit<User, 'id'>): Promise<User> => {
     return await api.put(`/user/${id}/atualizar`, user);
 }

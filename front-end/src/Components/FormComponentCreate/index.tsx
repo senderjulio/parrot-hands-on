@@ -45,10 +45,7 @@ const FormComponentCreate = () => {
       }else{
         alert('Usuário criado com sucesso')
         navigate('/')
-      }
-      
-      
-      
+      }     
     }
   })
 
