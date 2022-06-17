@@ -13,16 +13,6 @@ import { RootState } from './Components/store';
 const AppRoutes: React.FC = () => {
   var login = useSelector((state: RootState) => state.persistedReducer.isloged);  
 
-  // if(localStorage.getItem('login') === 'true'){
-  //   login = true
-  // }
-  // else{
-  //   login = false
-  // }
-
-  console.log(login);
-  
-
   return (
     <BrowserRouter>
       <Routes>
