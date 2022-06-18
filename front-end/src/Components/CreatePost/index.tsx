@@ -12,32 +12,24 @@ import { createPosts, getPosts, getUsers } from "../../api";
 import { Post, User } from "../@types";
 import PostItem from "../PostItem";
 import { useNavigate } from "react-router-dom";
-import { setUsersEdit } from "../store/users";
+
 
 
 function CreatePost() {
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const users = useSelector((state: RootState) => state.persistedReducer.users);
+  
   const [posts, setPosts] = useState<Post[]>([]);
-  const [users, setUsers] = useState<User>({} as User);
-  let id = parseInt(window.location.search.split('?')[1]);
+  const [num, setNum] = useState(1);
+
   useEffect(() => {
-    const pegarUser = async () => {
-      const user = await getUsers(id)
-      setUsers(user);
-      dispatch(setUsersEdit({users:user}))    
-    }
     let handlePost = async () => {
       const response = await getPosts()
       setPosts(response)
     }
     handlePost();
-    pegarUser();         
-  }, [])
-
-
-  console.log(posts);
+        
+  }, [num])
   
   const validationSchema = Yup.object({
     texto: Yup.string().required('O nome é obrigatório'),
@@ -50,8 +42,9 @@ function CreatePost() {
     },
     validationSchema,
     onSubmit: async values => {
-      const a = await createPosts({texto: values.texto, userId:users.id});
-      window.location.reload();   
+      await createPosts({texto: values.texto, userId:users.id});
+      formik.resetForm()
+      setNum(num + 1)   
     }
 
 

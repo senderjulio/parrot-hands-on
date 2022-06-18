@@ -8,7 +8,7 @@ interface initialState{
 
 const initialState: initialState = {
     users: {} as User,
-    isloged: false
+    isloged: false,
 }
 
 const usersSlice = createSlice({
@@ -16,12 +16,12 @@ const usersSlice = createSlice({
     initialState,
     reducers: {
         setUsersEdit: (state, action) => {
-            state.users = action.payload.users;
-            
+            state.users = action.payload.users;            
         },
         setLogin: (state, action) => {
             state.isloged = action.payload.isloged;
-        }
+        },
+
     }
 })
 

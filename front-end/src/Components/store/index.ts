@@ -15,8 +15,10 @@ export const store = configureStore({
     reducer: {
         persistedReducer,
         postsSlice
-
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+      }),
 })
 
 export const persistor = persistStore(store);

@@ -9,8 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setLogin, setUsersEdit } from '../store/users';
 
-
-
 const FormComponentLogin = () => {
   
   const navigate = useNavigate();
@@ -27,12 +25,9 @@ const FormComponentLogin = () => {
       password: ''
     },
     validationSchema,
-    onSubmit: async values => {
-      console.log(values);      
+    onSubmit: async values => {     
       const {token, user} = await postSigin(values)
-      console.log(user, token);
-            
-      if (user !== undefined) {     
+      if (user !== undefined && token !== undefined) {
         dispatch(setLogin({isloged:true}))
         dispatch(setUsersEdit({users:user}))
         navigate(`/feed/?${user.id}`)

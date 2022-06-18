@@ -17,21 +17,17 @@ const UsuarioComponent = () => {
   const dispatch = useDispatch();
 
   const [openModal, setOpenModal] = useState(false);
-  const [users, setUsers] = useState<User>({} as User);
   const [posts, setPosts] = useState<Post[]>([]);
   const userGet:User = useSelector((state: RootState) => state.persistedReducer.users);
 
   useEffect(() => {
-    const pegarUser = async () => {
-      let id = parseInt(window.location.search.split('?')[1]);
-      const user = await getUsers(id)
+    const pegarPosts = async () => {
       const post = await getPosts()
-      dispatch(setUsersEdit({users:user}))
+      const newPost = post.filter(post => post.userId === userGet.id)
       dispatch(setPostsRedux({posts:post}))
-      setUsers(user); 
-      setPosts(post)   
+      setPosts(newPost)   
     }
-    pegarUser();         
+    pegarPosts();         
   }, [])
   
 
@@ -40,8 +36,8 @@ const UsuarioComponent = () => {
         <ImagemUsuario img = {imgUsuario} alt = 'seu nome' width='
         20%' height='80px'/>
         <S.StyledInfUser>
-            <S.StyledH1> {users.name} </S.StyledH1>
-            <S.StyledP>{users.apartment} apartamento</S.StyledP>
+            <S.StyledH1> {userGet.name} </S.StyledH1>
+            <S.StyledP>{userGet.apartment} apartamento</S.StyledP>
             <S.StyledP>{userGet.email}</S.StyledP>
             <S.StyledP>{posts.length} publicações</S.StyledP>
         </S.StyledInfUser>

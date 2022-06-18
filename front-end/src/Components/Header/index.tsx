@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import logo from '../../Components/assets/images/logo.png';
 import { useDispatch, useSelector } from 'react-redux';
 import * as S from "./styled"
-import { setLogin } from '../store/users';
+import { setLogin, setUsersEdit } from '../store/users';
 import { RootState } from '../store';
 
 const Header: React.FC = () => {
@@ -11,7 +11,8 @@ const Header: React.FC = () => {
   let nome = user.name
 
   const handleLogout = () => {
-    dispatch(setLogin({isloged: false}));
+    dispatch(setLogin({isloged: false, token:''}));
+    dispatch(setUsersEdit({users: ''}));
     alert('Você foi deslogado');
     window.location.reload();
   }
