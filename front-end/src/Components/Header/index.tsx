@@ -14,7 +14,6 @@ const Header: React.FC = () => {
     dispatch(setLogin({isloged: false, token:''}));
     dispatch(setUsersEdit({users: ''}));
     alert('Você foi deslogado');
-    window.location.reload();
   }
   return (
     <S.StylesHeader>
